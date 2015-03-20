@@ -16,8 +16,8 @@ WORKDIR /home/r/
 
 RUN git clone https://git.openstack.org/openstack-dev/devstack
 
-WORKDIR  devstack/
+ADD local.conf devstack/
 
-ADD local.conf /
+WORKDIR  devstack/
 
 RUN su -m r -c ./stack.sh
