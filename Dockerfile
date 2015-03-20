@@ -10,4 +10,5 @@ RUN git clone https://git.openstack.org/openstack-dev/devstack
 
 WORKDIR  /devstack/
 
+
 RUN ./stack.sh
