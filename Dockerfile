@@ -20,4 +20,4 @@ ADD local.conf devstack/
 
 WORKDIR  devstack/
 
-RUN su -m r -c ./stack.sh
+RUN su -m r ./stack.sh
