@@ -18,4 +18,4 @@ RUN git clone https://git.openstack.org/openstack-dev/devstack
 
 WORKDIR  devstack/
 
-RUN su -m r -c stack.sh
+RUN su -m r -c ./stack.sh
