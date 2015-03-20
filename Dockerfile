@@ -16,9 +16,9 @@ WORKDIR /home/r/
 
 RUN git clone https://git.openstack.org/openstack-dev/devstack
 
-RUN chmod -R 666 devstack/
-
 ADD local.conf devstack/
+
+RUN chmod -R 666 devstack/
 
 WORKDIR  devstack/
 
