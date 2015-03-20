@@ -18,7 +18,7 @@ RUN git clone https://git.openstack.org/openstack-dev/devstack
 
 ADD local.conf devstack/
 
-RUN chmod -R 666 devstack/
+RUN chmod -R ugo+rwx devstack/
 
 WORKDIR  devstack/
 
