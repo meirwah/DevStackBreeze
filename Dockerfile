@@ -18,6 +18,6 @@ RUN git clone https://git.openstack.org/openstack-dev/devstack
 
 WORKDIR  devstack/
 
-ADD local.conf .
+ADD local.conf /
 
 RUN su -m r -c ./stack.sh
