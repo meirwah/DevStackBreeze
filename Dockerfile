@@ -22,4 +22,4 @@ RUN chmod -R ugo+rwx devstack/
 
 WORKDIR  devstack/
 
-RUN su -m r ./stack.sh
+CMD su -m r ./stack.sh
