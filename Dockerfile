@@ -18,9 +18,9 @@ WORKDIR /home/r/
 
 RUN  git clone https://git.openstack.org/openstack-dev/devstack
 
-RUN ./devstack/tools/create-stack-user.sh
-
 ADD local.conf devstack/
+
+RUN ./devstack/tools/create-stack-user.sh
 
 RUN chmod -R ugo+rwx devstack/
 
