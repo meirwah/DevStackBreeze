@@ -16,11 +16,13 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 WORKDIR /home/r/
 
-RUN  su -m r git clone https://git.openstack.org/openstack-dev/devstack
+RUN  git clone https://git.openstack.org/openstack-dev/devstack
 
 ADD local.conf devstack/
 
 RUN chmod -R ugo+rwx devstack/
+
+RUN chown -R r devstack/
 
 WORKDIR  devstack/
 
