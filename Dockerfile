@@ -14,11 +14,13 @@ RUN adduser r sudo
 
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-WORKDIR /home/r/
-
 RUN  git clone https://git.openstack.org/openstack-dev/devstack
 
 ADD local.conf devstack/
+
+RUN ./devstack/tools/create-stack-user.sh
+
+WORKDIR /home/r/
 
 RUN ls devstack/
 
@@ -31,8 +33,6 @@ RUN ls devstack/tools/
 RUN chmod -R ugo+rwx devstack/
 
 RUN chown -R r devstack/
-
-RUN ./devstack/tools/create-stack-user.sh
 
 WORKDIR  devstack/
 
