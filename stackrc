@@ -647,7 +647,7 @@ FLOATING_RANGE=${FLOATING_RANGE:-172.24.4.0/24}
 FIXED_RANGE=${FIXED_RANGE:-10.0.0.0/24}
 FIXED_NETWORK_SIZE=${FIXED_NETWORK_SIZE:-256}
 HOST_IP_IFACE=${HOST_IP_IFACE:-}
-HOST_IP="127.0.0.1"
+HOST_IP=127.0.0.1
 
 if [ "$HOST_IP" == "" ]; then
     die $LINENO "Could not determine host ip address.  See local.conf for suggestions on setting HOST_IP."
