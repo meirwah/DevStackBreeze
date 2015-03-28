@@ -8,12 +8,6 @@ RUN apt-get install git -y --fix-missing
 
 RUN apt-get update -qq && apt-get install -y python python-pip python-dev
 
-RUN adduser --disabled-password --gecos '' r
-
-RUN adduser r sudo
-
-RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-
 RUN  git clone https://git.openstack.org/openstack-dev/devstack
 
 ADD local.conf devstack/
@@ -21,6 +15,12 @@ ADD local.conf devstack/
 WORKDIR devstack/tools/
 
 RUN ./create-stack-user.sh
+
+RUN adduser --disabled-password --gecos '' r
+
+RUN adduser r sudo
+
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 WORKDIR /home/r/
 
