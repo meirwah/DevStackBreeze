@@ -22,6 +22,8 @@ ADD local.conf devstack/
 
 RUN ls devstack/
 
+RUN ls devstack/tools/
+
 RUN ./devstack/tools/create-stack-user.sh
 
 RUN chmod -R ugo+rwx devstack/
